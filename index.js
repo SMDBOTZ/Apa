@@ -2642,7 +2642,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
             if (!isPremium && db.data.users[m.sender].limit < 1) return alpha.send2ButMes(m.chat, lang.Nolimit(prefix), `© ${ownername}`, `.daily`, `👉 Daily`, `.weekly`, `Weekly 👈`, m)
             if (!/video/.test(mime) && !/audio/.test(mime)) return reply(lang.ToAud(prefix, command))
             if (!quoted) return reply(lang.ToAud(prefix, command))
-            if ((quoted.msg || quoted).seconds > 60) return reply('Maximum 60 seconds!')
+            if ((quoted.msg || quoted).seconds > 900) return reply('Maximum 900 seconds!')
             reply(lang.wait())
             let media = await quoted.download()
             let audio = await toAudio(media, 'mp4')
@@ -2661,7 +2661,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
             if (/document/.test(mime)) return reply(lang.ToMp3(prefix, command))
             if (!/video/.test(mime) && !/audio/.test(mime)) return reply(lang.ToMp3(prefix, command))
             if (!quoted) return reply(lang.ToMp3(prefix, command))
-            if ((quoted.msg || quoted).seconds > 60) return reply('Maximum 60 seconds!')
+            if ((quoted.msg || quoted).seconds > 900) return reply('Maximum 900 seconds!')
             reply(lang.wait())
             let media = await quoted.download()
             let audio = await toAudio(media, 'mp4')
@@ -2680,7 +2680,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
             if (!isPremium && db.data.users[m.sender].limit < 1) return alpha.send2ButMes(m.chat, lang.Nolimit(prefix), `© ${ownername}`, `.daily`, `👉 Daily`, `.weekly`, `Weekly 👈`, m)
             if (!/video/.test(mime) && !/audio/.test(mime)) return reply(lang.ToVn())
             if (!quoted) return reply(lang.ToVn())
-            if ((quoted.msg || quoted).seconds > 60) return reply('Maximum 60 seconds!')
+            if ((quoted.msg || quoted).seconds > 900) return reply('Maximum 900 seconds!')
             reply(lang.wait())
             let media = await quoted.download()
             let audio = await toPTT(media, 'mp4')
@@ -7511,7 +7511,7 @@ break
          case 'tupai':
             if (db.data.settings[botNumber].userRegister && !db.data.users[m.sender].registered) return alpha.send2ButMes(m.chat, `🇮🇩 _Hi @${m.sender.split('@')[0]} silahkan verifikasi terlebih dahulu sebelum memakai fitur bot_${enter}${enter}🇺🇸 _Hi @${m.sender.split('@')[0]} please verify first before using the bot feature_`, `© ${ownername}`, `.daftar ` + pushname, `🇺🇸 Verify`, `.daftar ` + pushname, 'Daftar 🇮🇩', fkontak, [m.sender])
             if (!isPremium && db.data.users[m.sender].limit < 1) return alpha.send2ButMes(m.chat, lang.Nolimit(prefix), `© ${ownername}`, `.daily`, `👉 Daily`, `.weekly`, `Weekly 👈`, m)
-            if ((quoted.msg || quoted).seconds > 60) return reply('Maximum 60 seconds!')
+            if ((quoted.msg || quoted).seconds > 900) return reply('Maximum 900 seconds!')
             try {
                let set
                if(/bass/.test(command)) set = '-af equalizer=f=54:width_type=o:width=2:g=20'
